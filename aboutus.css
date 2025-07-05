@@ -1,0 +1,476 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+
+.navbar {
+  position: fixed;        /* Fixes it to the screen */
+  top: 0;                 /* No gap from top */
+  left: 0;
+  width: 100%;            /* Full width */
+  height: 60px;
+  background-color: #070b23; /* Solid background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;          /* Make sure it stays above everything */
+  padding: 0 20px;        /* Optional horizontal spacing */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.nav-links,
+.nav-actions  {
+  display: flex;
+  align-items: center;
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  gap: 20px;
+  padding-right: 40px;
+}
+.logo a{
+    color: #0ff;
+}
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav-links a,
+.nav-links {
+  list-style: none; /* 💥 Removes bullets */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+
+
+.nav-links a:hover,
+.nav-links a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.nav-actions a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+.header {
+  background: linear-gradient(to right, #6b21a8, #312e81);
+  text-align: center;
+  /* padding: 30px 20px; */
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #a78bfa;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #cbd5e1;
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  color: #94a3b8;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.creator img {
+  width: 80px;
+  height: 80px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  background-color: #3b82f6;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact a:hover {
+  background-color: #2563eb;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1e293b;
+  color: #64748b;
+}
+
+/* Developer Duo Section */
+/* Developer Flip Cards */
+.developer-duo {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.flip-card {
+  background: transparent;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  backface-visibility: hidden;
+  background: #1e293b;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-front img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+  margin-bottom: 1rem;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.flip-front h3,
+.flip-front p,
+.flip-back h4,
+.flip-back p,
+.flip-back blockquote {
+  margin: 0.4rem 0;
+  text-align: center;
+}
+
+.flip-front a,
+.flip-back a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.flip-back ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.flip-back ul li {
+  margin: 0.3rem 0;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 280px;
+  height: 360px;
+  perspective: 1000px;
+
+  display: inline-block;         /* ✅ Force card to be treated as block */
+  vertical-align: top;           /* ✅ Align cards from top */
+  margin: 0 10px;                /* ✅ Optional: spacing fallback if gap fails */
+}
+
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.flip-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  text-align: left;
+  font-size: 0.9rem;
+  overflow-y: auto;
+}
+
+.flip-back h4 {
+  color: #a78bfa;
+  margin: 10px 0 5px;
+}
+
+.flip-back ul {
+  padding-left: 18px;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.flip-back blockquote {
+  font-style: italic;
+  color: #94a3b8;
+  margin: 10px 0;
+  border-left: 3px solid #64748b;
+  padding-left: 10px;
+}
+
+
+
+.linkedin-btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background 0.3s ease;
+}
+
+.linkedin-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Fix LinkedIn link on front (same as back) */
+.flip-front a {
+  margin-top: 8px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.flip-front a:hover {
+  text-decoration: underline;
+}
+
+/* Remove duplicate .developer-duo declaration if needed */
+
+
+
+/* ---------------- MOBILE NAVBAR ---------------- */
+/* MOBILE NAV ONLY */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nav.navbar{
+  width: 90%;
+
+}
+}
+
+
+/* Navbar spacing for desktop
+.navbar {
+  justify-content: space-between;
+  padding: 0 20px;
+} */
+
+/* DESKTOP LAYOUT RESTORE (after mobile styles) */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li,
+  .nav-links a,
+  .nav-actions a {
+    padding: 0;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 30px;
+  width: 88.44px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+}

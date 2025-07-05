@@ -1,0 +1,279 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0d25;
+  color: white;
+}
+
+
+.navbar {
+  position: fixed;        /* Fixes it to the screen */
+  top: 0;                 /* No gap from top */
+  left: 0;
+  width: 100%;            /* Full width */
+  height: 60px;
+  background-color: #070b23; /* Solid background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;          /* Make sure it stays above everything */
+  padding: 0 20px;        /* Optional horizontal spacing */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.nav-links,
+.nav-actions  {
+  display: flex;
+  align-items: center;
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  gap: 20px;
+  padding-right: 40px;
+}
+.logo a{
+    color: #0ff;
+}
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav-links a,
+.nav-links {
+  list-style: none; /* 💥 Removes bullets */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+
+
+.nav-links a:hover,
+.nav-links a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.nav-actions a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+  background-color: #10132e;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95em;
+  color: #ddd;
+}
+
+.sim-area {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+canvas {
+  border: 2px solid #333;
+  background-color: #151930;
+  border-radius: 8px;
+}
+
+#overlayCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto; /* allows clicking */
+  background-color: transparent;
+}
+.calculation-panel {
+  background-color: #10132e;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: left;
+}
+
+.calculation-panel h2 {
+  margin-top: 0;
+  color: cyan;
+}
+
+.calculation-panel p {
+  margin: 10px 0;
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+input[type=range] {
+  width: 150px;
+  margin-top: 5px;
+}
+
+h1{
+  padding-top: 20px;
+}
+
+
+/* ---------------- MOBILE NAVBAR ---------------- */
+/* MOBILE NAV ONLY */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nav.navbar{
+  width: 100%;
+
+}
+}
+
+
+/* Navbar spacing for desktop
+.navbar {
+  justify-content: space-between;
+  padding: 0 20px;
+} */
+
+/* DESKTOP LAYOUT RESTORE (after mobile styles) */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li,
+  .nav-links a,
+  .nav-actions a {
+    padding: 0;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 30px;
+  width: 88.44px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+}

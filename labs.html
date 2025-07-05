@@ -1,0 +1,80 @@
+<!-- labs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labs - Starlab Adventure</title>
+  <link rel="stylesheet" href="labs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+  <main class="main-content">
+    <h1>Select a Lab</h1>
+    <input type="text" id="search" placeholder="Search subjects..." />
+
+    <div id="labs-container">
+      <div class="lab-card" data-subject="Physics"><a href="physics.html">
+        <img src="https://img.icons8.com/?size=100&id=RPHZmB5ERyjp&format=png&color=000000" alt="Physics Icon" class="lab-icon" />
+        <div>Physics Lab</div></a>
+      </div>
+      <div class="lab-card" data-subject="Chemistry"><a href="chemistry.html">
+        <img src="https://img.icons8.com/color/64/000000/test-tube.png" alt="Chemistry Icon" class="lab-icon" />
+        <div>Chemistry Lab</div></a>
+      </div>
+      <div class="lab-card" data-subject="Biology"><a href="biology.html">
+        <img src="https://img.icons8.com/?size=100&id=13213&format=png&color=000000" alt="Biology Icon" class="lab-icon" />
+        <div>Biology Lab</div></a>
+    </div>
+        <div class="lab-card" data-subject="Geography"><a href="geography.html">
+        <img src="https://img.icons8.com/?size=100&id=113643&format=png&color=000000" alt="Geography Icon" class="lab-icon" />
+        <div>Geography Lab</div></a>
+        </div>
+        <div class="lab-card" data-subject="Astronomy"><a href="astronomy.html">
+        <img src="https://img.icons8.com/?size=100&id=Tk239aq46wGu&format=png&color=000000" alt="Astronomy Icon" class="lab-icon" />
+        <div>Astronomy Lab</div></a>
+        </div>
+        <div class="lab-card" data-subject="Mathematics"><a href="mathematics.html">
+        <img src="https://img.icons8.com/?size=100&id=ySa0czm8vdB3&format=png&color=000000" alt="Mathematics Icon" class="lab-icon" />
+        <div>Mathematics Lab</div></a>
+        </div>
+    </div>
+  </main>
+
+
+
+  <script src="labs.js"></script>
+
+</body>
+</html>

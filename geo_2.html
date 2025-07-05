@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latitude & Longitude Explorer | Starlab Adventure</title>
+  <link rel="stylesheet" href="geo_2.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main>
+  <h1>🌐 Latitude & Longitude Explorer</h1>
+
+  <div class="sim-area">
+    <div style="position: relative; width: 600px; height: 300px;">
+  <img id="earthMap" 
+       src="map.jpeg" 
+       alt="Earth Map" 
+       width="600" height="300"
+       style="display: block; border-radius: 8px; border: 2px solid #333;">
+
+  <canvas id="overlayCanvas" width="600" height="300"></canvas>
+</div>
+
+
+    <div class="calculation-panel" id="infoBox">
+      <h2>📍 Coordinates</h2>
+      <p><strong>Latitude:</strong> <span id="latVal">-</span></p>
+      <p><strong>Longitude:</strong> <span id="lonVal">-</span></p>
+      <p><strong>Hemisphere:</strong> <span id="hemiVal">-</span></p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p id="quizPrompt">🎯 Click on map</p>
+  </div>
+</main>
+
+  <script src="geo_2.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- bio_2.html (visual-only, no images) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔬 Onion Cell Microscope Study</title>
+  <link rel="stylesheet" href="bio_2.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+  <main class="main-content">
+    <header>
+      <h1>🔬 Microscope Lab: Onion Cell Observation</h1>
+      <p>Follow each step to prepare the slide and observe onion cells under the microscope.</p>
+    </header>
+    <div id="sidebar">
+      <a href="l-m_bio2.html" target="_blank" class="side-btn">📜 Lab Manual</a>
+    </div>
+    <section class="steps">
+      <button id="peelBtn">1️⃣ Peel Onion Skin</button>
+      <button id="placeSlideBtn" disabled>2️⃣ Place on Slide</button>
+      <button id="stainBtn" disabled>3️⃣ Add Iodine Stain</button>
+      <button id="coverBtn" disabled>4️⃣ Place Cover Slip</button>
+      <button id="observeBtn" disabled>5️⃣ Observe Under Microscope</button>
+
+      <div class="procedure">
+        <p id="procedureStatus">Start by peeling the onion skin.</p>
+      </div>
+    </section>
+
+    <section class="lab-area">
+      <div class="slide-stage">
+        <div id="onionSkin" class="layer onion-skin hidden"></div>
+        <div id="stainDrop" class="layer iodine-stain hidden"></div>
+        <div id="coverSlip" class="layer cover-slip hidden"></div>
+        <div id="microscopeView" class="layer microscope-zoom hidden"></div>
+      </div>
+    </section>
+
+    <div class="message" id="messageBox">🧪 Ready to begin slide preparation.</div>
+
+  </main>
+
+  <!-- Audios -->
+  <audio id="peelSound" src="crush.mp3"></audio>
+  <audio id="stainSound" src="drop.mp3"></audio>
+  <audio id="coverSound" src="crush.mp3"></audio>
+  <audio id="viewSound" src="win.mp3"></audio>
+
+  <script src="bio_2.js"></script>
+</body>
+</html>

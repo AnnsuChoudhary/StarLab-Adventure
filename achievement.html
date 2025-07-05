@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements - StarLab Adventure</title>
+  <link rel="stylesheet" href="achievement.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+  <main class="container">
+    <h1 class="page-heading">🎖 Your Achievements</h1>
+
+    <!-- Badge Section -->
+    <section class="badges-section">
+      <h2 class="section-heading">🏅 Badges Earned</h2>
+      <div class="badges" id="badgesContainer">
+        <!-- Badges will be inserted here -->
+      </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="progress-section">
+      <h2 class="section-heading">📊 Your Progress</h2>
+      <div class="progress-details">
+        <p id="labsCompleted">Labs Completed: Loading...</p>
+        <p id="subjectsCovered">Subjects Covered: Loading...</p>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="section-heading">🕒 Activity Timeline</h2>
+      <ul id="timeline">
+        <!-- Timeline items go here -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="achievement.js" type="module"></script>
+</body>
+</html>

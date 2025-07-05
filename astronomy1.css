@@ -1,0 +1,430 @@
+/* eclipse.css */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0b0f2f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  position: fixed;        /* Fixes it to the screen */
+  top: 0;                 /* No gap from top */
+  left: 0;
+  width: 100%;            /* Full width */
+  height: 60px;
+  background-color: #070b23; /* Solid background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;          /* Make sure it stays above everything */
+  padding: 0 20px;        /* Optional horizontal spacing */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.nav-links,
+.nav-actions  {
+  display: flex;
+  align-items: center;
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  gap: 20px;
+  padding-right: 40px;
+}
+.logo a{
+    color: #0ff;
+}
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav-links a,
+.nav-links {
+  list-style: none; /* 💥 Removes bullets */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+
+
+.nav-links a:hover,
+.nav-links a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.nav-actions a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+#sim-container {
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 55px;
+}
+
+h1 {
+  color: #f7c948;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#instruction-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#space {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at center, #111933 0%, #000000 100%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px;
+  background: radial-gradient(circle, #ffcc00, #ff8800);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ffaa00;
+  z-index: 2;
+}
+
+#earth-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin: -150px;
+  border: 1px dashed #4455ff44;
+  border-radius: 50%;
+  animation: rotateEarthOrbit 20s linear infinite;
+}
+
+#earth {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  background: #3f92ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #3f92ff;
+}
+
+#moon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px;
+  border: 1px dotted #aaa6;
+  border-radius: 50%;
+  animation: rotateMoonOrbit 5s linear infinite;
+}
+
+#moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: -7.5px;
+  background: #bbb;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #999;
+}
+
+#controls {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #222;
+  color: #f7c948;
+  border: 1px solid #f7c948;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Orbit Animations */
+@keyframes rotateEarthOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMoonOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  padding: 2px 6px;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+#shadow-umbra, #shadow-penumbra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#shadow-umbra {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(0,0,0,0.6) 0%, transparent 70%);
+  display: none;
+}
+
+#shadow-penumbra {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%);
+  display: none;
+}
+
+#message-box {
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #f7f7f7;
+  width: 80%;
+}
+
+
+#earth, #moon {
+  position: absolute;
+}
+
+#earth-orbit, #moon-orbit {
+  border: none;
+  animation: none;
+}
+
+#earth-orbit, #moon-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#moon {
+  z-index: 5;
+}
+
+#earth {
+  z-index: 4;
+}
+
+#sun {
+  z-index: 3;
+}
+
+#shadow-umbra,
+#shadow-penumbra {
+  z-index: 2;
+}
+
+#space {
+  position: relative;
+  background-color: #070b2d;
+  border: 2px solid #1a1a2e;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+.guideline {
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform-origin: top left;
+  z-index: 1;
+}
+
+
+/* ---------------- MOBILE NAVBAR ---------------- */
+/* MOBILE NAV ONLY */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nav.navbar{
+  width: 90%;
+
+}
+}
+
+
+/* Navbar spacing for desktop
+.navbar {
+  justify-content: space-between;
+  padding: 0 20px;
+} */
+
+/* DESKTOP LAYOUT RESTORE (after mobile styles) */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li,
+  .nav-links a,
+  .nav-actions a {
+    padding: 0;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 30px;
+  width: 88.44px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eclipse Simulator - StarLab Adventure</title>
+  <link rel="stylesheet" href="astronomy1.css" />
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+  <div id="sim-container">
+    <h1>🌗 Solar & Lunar Eclipse Simulation</h1>
+
+    <div id="instruction-box">
+      <h2>Instructions</h2>
+      <p>Welcome to the Eclipse Lab! Use the controls below to simulate the movement of the Earth and Moon. Try to align them to observe solar or lunar eclipses!</p>
+      <ul>
+        <li>▶️ Press "Play" to start the simulation</li>
+        <li>⏸️ Press "Pause" to stop anytime</li>
+        <li>⏭️ Use "Step" to move frame-by-frame</li>
+      </ul>
+    </div>
+
+    <div id="space">
+      <div id="sun"><div class="label">Sun</div></div>
+      <div id="earth"><div class="label">Earth</div></div>
+      <div id="moon"><div class="label">Moon</div></div>
+      <div id="shadow-umbra"></div>
+      <div id="shadow-penumbra"></div>
+    </div>
+
+    <div id="message-box">Simulation running... Try aligning Earth & Moon!</div>
+
+    <div id="controls">
+      <button id="playBtn">▶️ Play</button>
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="stepBtn">⏭️ Step</button>
+    </div>
+  </div>
+
+  <script src="astronomy1.js"></script>
+</body>
+</html>

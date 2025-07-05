@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div id="profileCard">
+      <h1><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Icon" class="profile-icon" /> User Profile</h1>
+
+      <p><strong>Name:</strong> <span id="userName">Loading...</span></p>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>College:</strong> <span id="userCollege"></span></p>
+      <p><strong>About:</strong> <span id="userAbout"></span></p>
+
+      <button id="editProfileBtn">Edit Profile</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div id="editForm" class="hidden">
+      <h2>Edit Your Profile</h2>
+      <label>Name: <input type="text" id="editName" /></label>
+      <label>College: <input type="text" id="editCollege" /></label>
+      <label>About: <textarea id="editAbout"></textarea></label>
+      <button id="saveProfileBtn">Save</button>
+      <button id="cancelEditBtn">Cancel</button>
+    </div>
+
+    <div id="loginPrompt" class="hidden">
+      <p>Please <a href="login.html">login</a> to view your profile.</p>
+    </div>
+  </div>
+
+  <script type="module" src="profile.js"></script>
+</body>
+</html>
+

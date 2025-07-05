@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  background: #070b23;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+.navbar {
+  position: fixed;        /* Fixes it to the screen */
+  top: 0;                 /* No gap from top */
+  left: 0;
+  width: 100%;            /* Full width */
+  height: 60px;
+  background-color: #070b23; /* Solid background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;          /* Make sure it stays above everything */
+  padding: 0 20px;        /* Optional horizontal spacing */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.nav-links,
+.nav-actions  {
+  display: flex;
+  align-items: center;
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  gap: 20px;
+  padding-right: 40px;
+}
+.logo a{
+    color: #0ff;
+}
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav-links a,
+.nav-links {
+  list-style: none; /* 💥 Removes bullets */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+
+
+.nav-links a:hover,
+.nav-links a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.nav-actions a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+h1{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.controls {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  margin-right: 0.5rem;
+}
+
+.canvas-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem;
+}
+
+canvas {
+  background: #1a1a1a;
+  border: 1px solid #555;
+}
+
+.info-box {
+  background: #111;
+  border: 1px solid #444;
+  padding: 1rem;
+  color: #ddd;
+  width: 340px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3rem;
+}
+
+#rayInfoTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+#rayInfoTable th, #rayInfoTable td {
+  border: 1px solid #444;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+#rayInfoTable th {
+  background-color: #222;
+  color: #eee;
+}
+
+.controls select, .controls input[type="range"] {
+  background: #111;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.controls input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+
+/* ---------------- MOBILE NAVBAR ---------------- */
+/* MOBILE NAV ONLY */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nav.navbar{
+  width: 90%;
+
+}
+}
+
+
+/* Navbar spacing for desktop
+.navbar {
+  justify-content: space-between;
+  padding: 0 20px;
+} */
+
+/* DESKTOP LAYOUT RESTORE (after mobile styles) */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li,
+  .nav-links a,
+  .nav-actions a {
+    padding: 0;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 30px;
+  width: 88.44px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar System Explorer</title>
+  <link rel="stylesheet" href="solarsys.css" />
+</head>
+<body>
+  <h1 class="title">🌌 Solar System Explorer</h1>
+
+  <div id="solarWrapper">
+    <div class="solar-system" id="solarSystem">
+      <div class="sun" onclick="showPlanetInfo('Sun')">
+        <span class="label">Sun</span>
+      </div>
+
+      <div class="orbit mercury-orbit">
+        <div class="planet mercury" onclick="showPlanetInfo('Mercury')">
+          <span class="label">Mercury</span>
+        </div>
+      </div>
+      <div class="orbit venus-orbit">
+        <div class="planet venus" onclick="showPlanetInfo('Venus')">
+          <span class="label">Venus</span>
+        </div>
+      </div>
+      <div class="orbit earth-orbit">
+        <div class="planet earth" onclick="showPlanetInfo('Earth')">
+          <span class="label">Earth</span>
+        </div>
+      </div>
+      <div class="orbit mars-orbit">
+        <div class="planet mars" onclick="showPlanetInfo('Mars')">
+          <span class="label">Mars</span>
+        </div>
+      </div>
+      <div class="orbit jupiter-orbit">
+        <div class="planet jupiter" onclick="showPlanetInfo('Jupiter')">
+          <span class="label">Jupiter</span>
+        </div>
+      </div>
+      <div class="orbit saturn-orbit">
+        <div class="planet saturn" onclick="showPlanetInfo('Saturn')">
+          <span class="label">Saturn</span>
+        </div>
+      </div>
+      <div class="orbit uranus-orbit">
+        <div class="planet uranus" onclick="showPlanetInfo('Uranus')">
+          <span class="label">Uranus</span>
+        </div>
+      </div>
+      <div class="orbit neptune-orbit">
+        <div class="planet neptune" onclick="showPlanetInfo('Neptune')">
+          <span class="label">Neptune</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="planet-modal" id="planetModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div class="planet-image" id="planetImage"></div>
+      <h2 id="modalPlanetName">Planet</h2>
+      <ul id="modalPlanetDetails"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.4.0/dist/panzoom.min.js"></script>
+  <script src="solarsys.js"></script>
+</body>
+</html>

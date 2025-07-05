@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coordinate Geometry Lab | Starlab Adventure</title>
+  <link rel="stylesheet" href="math_2.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main>
+    <h2>Coordinate Geometry Lab</h2>
+    <canvas id="graphCanvas" width="600" height="600"></canvas>
+    <div class="info-box" id="outputBox">
+      <p>Click on the graph to plot two points A and B.</p>
+    </div>
+    <div class="steps-box" id="stepsBox"></div>
+    <button onclick="resetGraph()">Reset</button>
+  </main>
+
+  <script src="math_2.js"></script>
+</body>
+</html>

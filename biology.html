@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Lab - Starlab Adventure</title>
+  <link rel="stylesheet" href="biology.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main class="main-content">
+    <h1>Biology Experiments</h1>
+    <input type="text" id="search" placeholder="Search experiments..." />
+
+    <div id="experiment-list">
+      <div class="experiment-item" data-experiment="Starch Test"><a href="bio_1.html">Starch Test</a></div>
+      <div class="experiment-item" data-experiment=" Onion Cell Observation"><a href="bio_2.html">Onion Cell Observation</a></div>
+    </div>
+  </main>
+
+  <script src="biology.js"></script>
+</body>
+</html>

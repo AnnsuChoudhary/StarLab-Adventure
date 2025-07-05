@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starlab Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Background Video (only one instance) -->
+  <video autoplay muted loop id="bg-video">
+    <source src="Starlab Adventure video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="overlay">
+    <!-- Navbar --> 
+    <nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Hero Section (example) -->
+    <section class="hero">
+      <h1>Welcome to Starlab</h1>
+      <p>Embark on a journey across galaxies.</p>
+      <div class="hero-buttons">
+        <a href="labs.html" class="btn">Explore Labs</a>
+        <a href="signup.html" class="btn">Join the Crew</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Daily Facts Section -->
+ <section class="fact-section">
+  <h2 class="fact-heading">✨ Did You Know?</h2>
+  <div class="fact-card" id="factCard">
+    <img src="" alt="Fact Image" class="fact-image" id="factImage">
+    <p class="fact-text" id="factText">Loading...</p>
+  </div>
+  <button class="next-btn" id="nextBtn">Next ➜</button>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+  <p class="quote">“The stars are not the limit—they're just the beginning.”</p>
+
+  <div class="footer-links">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=starlabadventure@gmail.com&su=Contact%20via%20StarLab%20Adventure" target="_blank">
+  <i class="fas fa-envelope"></i>
+  Contact
+</a>
+
+
+    <a href="https://instagram.com/starlab.adventure" target="_blank">
+      <i class="fab fa-instagram"></i>
+      Instagram
+    </a>
+  </div>
+
+  <p class="credit">© 2025 <strong>Starlab Adventure</strong> | A gamified science experience for young explorers.</p>
+  <p class="credit">Made with 🧪✨ by the Starlab Team</p>
+</footer>
+
+  
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
+

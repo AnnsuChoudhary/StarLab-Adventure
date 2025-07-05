@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Chemistry Lab</title>
+  <link rel="stylesheet" href="chem1.css" />
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+  <!-- Floating Molecules -->
+  <div class="molecule"></div>
+  <div class="molecule"></div>
+  <div class="molecule"></div>
+  <div class="molecule"></div>
+
+  <header>
+    <h1>🧪 Virtual Chemistry Lab</h1>
+    <p>Explore acid-base properties by simulating real lab interactions!</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Instructions Box -->
+    <div id="instructionBox">Step 1: Fill the test tube to begin your experiment.</div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <label for="substance">Choose a Substance:</label>
+      <select id="substance">
+        <option value="vinegar">Vinegar (Acidic)</option>
+        <option value="baking_soda">Baking Soda (Basic)</option>
+        <option value="lemon_juice">Lemon Juice (Acidic)</option>
+        <option value="soap">Soap (Basic)</option>
+        <option value="milk">Milk (Slightly Acidic)</option>
+        <option value="orange_juice">Orange Juice (Acidic)</option>
+        <option value="ammonia">Ammonia (Basic)</option>
+        <option value="bleach">Bleach (Strongly Basic)</option>
+        <option value="battery_acid">Battery Acid (Strongly Acidic)</option>
+        <option value="mystery">Mystery Liquid</option>
+      </select>
+
+      <button id="fillBtn">💧 Fill Test Tube</button>
+
+      <label for="phGuess">Guess the pH Type:</label>
+      <select id="phGuess">
+        <option value="">-- Select --</option>
+        <option value="Acidic">Acidic</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Basic">Basic</option>
+      </select>
+
+      <button id="guessBtn">🤔 Confirm Guess</button>
+      <button id="testBtn">🧪 Test Substance</button>
+      <p id="scoreDisplay">Score: 0</p>
+    </div>
+
+    <!-- Lab Area -->
+    <div class="lab-area">
+      <div class="beaker-container" id="beakerContainer">
+        <div class="beaker" id="beaker"></div>
+      </div>
+
+      <div class="test-tube" id="testTube" draggable="true"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Virtual Chemistry Lab | Made with ❤️</p>
+  </footer>
+
+  <!-- Floating Molecules -->
+  <div class="molecule" style="left: 10%; top: 20%"></div>
+  <div class="molecule" style="left: 50%; top: 70%"></div>
+  <div class="molecule" style="left: 80%; top: 40%"></div>
+  <div class="molecule" style="left: 30%; top: 90%"></div>
+
+  <script src="chem1.js"></script>
+</body>
+</html>

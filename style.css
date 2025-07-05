@@ -1,0 +1,505 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  background-color: transparent; /* Deep space blue #0b0f2f*/
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Video */
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Only fill 1 screen */
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none; /* Prevent video from blocking clicks */
+}
+
+
+
+/* Optional: Twinkling Stars Overlay (image-based) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: twinkle 100s linear infinite;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+
+@keyframes twinkle {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-500px, -500px); }
+}
+
+/* Overlay Wrapper */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  padding: 20px 50px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;        /* Fixes it to the screen */
+  top: 0;                 /* No gap from top */
+  left: 0;
+  width: 100%;            /* Full width */
+  height: 60px;
+  background-color: #070b23; /* Solid background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;          /* Make sure it stays above everything */
+  padding: 0 20px;        /* Optional horizontal spacing */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.nav-links,
+.nav-actions  {
+  display: flex;
+  align-items: center;
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  gap: 20px;
+}
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav-links a,
+.nav-links {
+  list-style: none; /* 💥 Removes bullets */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+
+
+.nav-links a:hover,
+.nav-links a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.nav-actions a:hover {
+  color: #0ff; /* or any other highlight color */
+  text-decoration: none; /* keep underline removed on hover */
+}
+.logo a{
+    color: #0ff;
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 33vh;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 0 0 15px #0ff;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin: 20px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.hero-buttons {
+  margin-top: 35px;
+}
+
+.hero .btn {
+  text-decoration: none;
+  background: #0ff;
+  color: #000;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #00cccc;
+  transform: scale(1.05);
+}
+
+/* Daily Facts Section */
+.fact-section {
+  background-color: #070b23;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.fact-heading {
+  font-size: 2rem;
+  color: #38bdf8;
+  text-shadow: 0 0 10px #00f0ff;
+  margin-bottom: 1.5rem;
+}
+
+.fact-card {
+  background-color: #1e293b;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.fact-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.fact-text {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+}
+
+.next-btn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.next-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* Footer */
+footer {
+  background: #000209f7;
+  top: 0;
+  padding-top: 50px;
+  text-align: center;
+  color: #aaa;
+  border-top: 1px solid #222;
+  /* margin-top: 60px; */
+  font-size: 0.95rem;
+  padding-bottom: 50px;
+}
+
+footer .quote {
+  font-style: italic;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.footer-links {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(245, 245, 245, 0.96);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #0ff;
+}
+
+.footer-links img {
+  filter: brightness(1.2);
+  transition: transform 0.3s;
+}
+
+.footer-links a:hover img {
+  transform: scale(1.1);
+}
+
+footer .credit {
+  color: #888;
+  margin-top: 10px;
+}
+
+
+/* --- Add this near the bottom of your CSS file --- */
+
+/* Responsive Utilities */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .fact-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links {
+    padding-left: 0;
+  }
+
+  .hero {
+    margin-top: 20vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin: 10px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero .btn {
+    margin: 10px auto;
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+  }
+
+  .fact-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .fact-image {
+    height: 180px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .fact-text {
+    font-size: 0.95rem;
+  }
+
+  .next-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .footer .quote {
+    font-size: 1rem;
+  }
+
+  footer .credit {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ---------------- MOBILE NAVBAR ---------------- */
+/* MOBILE NAV ONLY */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  nav.navbar{
+  width: 100%;
+
+}
+}
+
+
+/* Navbar spacing for desktop
+.navbar {
+  justify-content: space-between;
+  padding: 0 20px;
+} */
+
+/* DESKTOP LAYOUT RESTORE (after mobile styles) */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  @media (min-width: 769px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+
+
+  .nav-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li,
+  .nav-links a,
+  .nav-actions a {
+    padding: 0;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 30px;
+  width: 88.44px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+
+}

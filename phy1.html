@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflection & Refraction Simulator</title>
+  <link rel="stylesheet" href="phy1.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+  <main>
+    <h1>Reflection & Refraction Simulator</h1>
+
+    <div class="controls">
+      <label>Mode:
+        <select id="modeSelect">
+          <option value="refraction">Refraction</option>
+          <option value="reflection">Reflection</option>
+        </select>
+      </label>
+
+      <label>Medium 1:
+        <select id="medium1">
+          <option value="1.0">Air (n=1.0)</option>
+          <option value="1.33">Water (n=1.33)</option>
+          <option value="1.52">Glass (n=1.52)</option>
+          <option value="1.47">Oil (n=1.47)</option>
+          <option value="2.42">Diamond (n=2.42)</option>
+        </select>
+      </label>
+
+      <label>Medium 2:
+        <select id="medium2">
+          <option value="1.52">Glass (n=1.52)</option>
+          <option value="1.0">Air (n=1.0)</option>
+          <option value="1.33">Water (n=1.33)</option>
+          <option value="1.47">Oil (n=1.47)</option>
+          <option value="2.42">Diamond (n=2.42)</option>
+        </select>
+      </label>
+
+      <label>Angle of Incidence: <span id="angleVal">30</span>°
+        <input type="range" id="angleSlider" min="0" max="89" value="30">
+      </label>
+    </div>
+
+    <div class="sim-area">
+      <canvas id="canvas" width="800" height="500"></canvas>
+      <div class="calculation-panel">
+        <h2>Live Calculations</h2>
+        <p><strong>Angle of Incidence:</strong> <span id="angleInc">30°</span></p>
+        <p><strong>Angle of Reflection:</strong> <span id="angleRef">30°</span></p>
+        <p><strong>Angle of Refraction:</strong> <span id="angleRefr">-</span></p>
+        <p><strong>n₁:</strong> <span id="n1">1.00</span></p>
+        <p><strong>n₂:</strong> <span id="n2">1.52</span></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="phy1.js"></script>
+</body>
+</html>

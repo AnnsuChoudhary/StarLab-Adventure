@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StarLab Titration</title>
+  <link rel="stylesheet" href="titration.css">
+</head>
+<body>
+
+  <h1>🧪 Titration Lab – StarLab Adventure</h1>
+
+  <div class="lab-wrapper">
+
+    <!-- Burette -->
+    <div class="burette">
+      <div id="acidLevel" class="acid-level"></div>
+      <div class="scale">
+        <span>30ml</span>
+        <span>20</span>
+        <span>10</span>
+        <span>0</span>
+      </div>
+      <button id="releaseBtn">Release Drop ↓</button>
+    </div>
+
+    <!-- Flask -->
+    <div class="flask">
+      <div id="flaskLiquid" class="flask-liquid pink"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Erlenmeyer_flask_icon.svg/1024px-Erlenmeyer_flask_icon.svg.png" alt="Flask">
+    </div>
+
+  </div>
+
+  <!-- Info & Status -->
+  <div class="info">
+    <p><strong>Volume Released:</strong> <span id="volumeDisplay">0.0</span> ml</p>
+    <p><strong>Status:</strong> <span id="statusText">Ready to begin titration.</span></p>
+  </div>
+
+  <!-- Sound -->
+  <audio id="dropSound" src="https://assets.mixkit.co/sfx/preview/mixkit-water-drop-1223.mp3"></audio>
+  <audio id="completeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-flask-liquid-1194.mp3"></audio>
+
+  <script src="titration.js"></script>
+</body>
+</html>
+
+

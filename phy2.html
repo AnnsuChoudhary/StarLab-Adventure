@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dispersion of White Light</title>
+  <link rel="stylesheet" href="phy2.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+    
+    <h1>Virtual Lab: Dispersion of White Light</h1>
+
+
+  <div class="main-container">
+    <div class="controls">
+      <label for="prismType">Prism Material:</label>
+      <select id="prismType">
+        <option value="glass">Glass</option>
+        <option value="diamond">Diamond</option>
+      </select>
+
+      <label for="angleSlider">Angle of Incidence: <span id="angleVal">30</span>°</label>
+      <input type="range" id="angleSlider" min="10" max="80" value="30" />
+
+      <label for="lightType">Light Type:</label>
+      <select id="lightType">
+        <option value="white">White Light</option>
+        <option value="mono">Monochromatic(green)</option>
+        <option value="sunlight">Sunlight</option>
+      </select>
+    </div>
+
+    <div class="canvas-section">
+      <canvas id="dispersionCanvas" width="1200" height="600"></canvas>
+      <div class="info-box">
+        <h3>Ray Info</h3>
+        <div id="rayInfo"></div>
+
+        <h3>Snell's Law</h3>
+        <p id="snellFormula">n₁·sin(θi) = n₂·sin(θt)</p>
+        <p id="snellCalc">1.00·sin(30°) = 1.53·sin(θt)</p>
+      </div>
+    </div>
+
+  <script src="phy2.js"></script>
+</body>
+</html>

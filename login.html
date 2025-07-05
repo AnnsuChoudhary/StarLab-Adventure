@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button id="login-btn">Login</button>
+
+    <div class="separator">
+      <hr /><span>OR</span><hr />
+    </div>
+
+    <button id="google-login-btn">Login with Google</button>
+
+    <p class="link-row">
+      New user? <a href="signup.html">Sign up here</a> |
+      <a href="#" id="forgot-password-link">Forgot Password?</a>
+    </p>
+
+    <div id="reset-section" class="hidden">
+      <input type="email" id="reset-email" placeholder="Enter email to reset password">
+      <button id="reset-password-btn">Reset Password</button>
+    </div>
+
+    <p id="error-message" class="error-text"></p>
+  </div>
+
+  <script type="module" src="login.js"></script>
+</body>
+</html>

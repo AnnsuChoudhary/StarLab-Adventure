@@ -1,0 +1,89 @@
+<!-- bio_1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌙 Starch Test - Virtual Lab Mode</title>
+  <link rel="stylesheet" href="bio_1.css">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main class="main-content">
+    <header>
+      <h1>🌙 Starlab - Starch Test</h1>
+      <p>Perform each step and observe changes in the beaker below!</p>
+    </header>
+    <div id="sidebar">
+      <a href="l-m_bio1.html" target="_blank" class="side-btn">📜 Lab Manual</a>
+    </div>
+    <section class="steps">
+      <label for="sample">Step 1️⃣ Choose a Food Sample:</label>
+      <select id="sample">
+        <option value="potato">Potato (starch)</option>
+        <option value="rice">Rice (starch)</option>
+        <option value="apple">Apple (low starch)</option>
+        <option value="onion">Onion (no starch)</option>
+        <option value="banana">Banana (some starch)</option>
+        <option value="mystery">Mystery Sample</option>
+      </select>
+
+      <button id="crushBtn">2️⃣ Crush Sample ⚒️</button>
+      <button id="waterBtn" disabled>3️⃣ Add Water 💧</button>
+      <button id="filterBtn" disabled>4️⃣ Filter Solution 🧪</button>
+      <button id="testBtn">5️⃣ Test for Starch 🔬</button>
+      <div class="procedure">
+        <p id="procedureStatus">Start by choosing your sample.</p>
+      </div>
+
+    </section>
+
+    <section class="lab-area">
+      <div class="beaker-container">
+        <div class="beaker" id="beaker">
+          <div class="beaker-liquid" id="liquid"></div>
+          <div class="crushed-particles" id="particles"></div>
+          <div class="droplets" id="droplets"></div>
+        </div>
+      </div>
+      <div class="test-tube" id="testTube" draggable="true"></div>
+    </section>
+    <div class="message" id="messageBox">Follow all steps and drag the test tube to pour solution.</div>
+  </main>
+
+  <!-- Audios -->
+  <audio id="crushSound" src="crush.mp3"></audio>
+  <audio id="waterSound" src="pour.mp3"></audio>
+  <audio id="filterSound" src="drop.mp3"></audio>
+  <audio id="pourSound" src="pour.mp3"></audio>
+  <audio id="testSound" src="drop.mp3"></audio>
+  <audio id="successSound" src="win.mp3"></audio>
+  <audio id="failSound" src="fail.mp3"></audio>
+
+  <script src="bio_1.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🧪 Periodic Table Explorer | Starlab Adventure</title>
+  <link rel="stylesheet" href="chem 2.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Full Menu: Links + Actions -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="achievement.html">Achievements</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="aboutus.html">About</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main>
+    <h1>🧪 Periodic Table Explorer</h1>
+
+    <!-- Info panel on top -->
+    <div class="calculation-panel" style="margin: 20px auto; max-width: 600px;">
+      <h2>🔍 Element Info</h2>
+      <p><strong>Name:</strong> <span id="elName">-</span></p>
+      <p><strong>Symbol:</strong> <span id="elSymbol">-</span></p>
+      <p><strong>Atomic Number:</strong> <span id="elAtomic">-</span></p>
+      <p><strong>Type:</strong> <span id="elType">-</span></p>
+    </div>
+
+    <!-- Periodic Table Canvas -->
+    <div class="sim-area">
+      <canvas id="overlayCanvas" width="1200" height="650"></canvas>
+    </div>
+  </main>
+
+  <script src="chem 2.js"></script>
+</body>
+</html>
