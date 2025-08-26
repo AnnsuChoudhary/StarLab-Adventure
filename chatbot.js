@@ -1,4 +1,4 @@
-// AIzaSyBpMbEDjH9j_-3b3TB4KB2qmXTq58O47Zo
+//
 
 // Get correct elements
 const chatContainer = document.getElementById("chat-box");
@@ -79,4 +79,5 @@ sendButton.addEventListener("click", sendMessage);
 userInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") sendMessage();
 });
+
 
