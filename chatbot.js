@@ -6,7 +6,7 @@ const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-btn");
 
 // Replace with your Gemini API Key
-const GEMINI_API_KEY = "AIzaSyBpMbEDjH9j_-3b3TB4KB2qmXTq58O47Zo";
+const GEMINI_API_KEY = "//";
 
 // Change model to the correct one
 const MODEL_NAME = "gemini-1.5-flash";
@@ -79,3 +79,4 @@ sendButton.addEventListener("click", sendMessage);
 userInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") sendMessage();
 });
+
