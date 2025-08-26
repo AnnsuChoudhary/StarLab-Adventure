@@ -1,4 +1,4 @@
-// AIzaSyBpMbEDjH9j_-3b3TB4KB2qmXTq58O47Zo
+//
 
 // labbuddyvoice.js
 (function () {
@@ -132,7 +132,7 @@
 
     // --- API ---
     async function getAssistantReply(userText) {
-      const GEMINI_API_KEY = "AIzaSyBpMbEDjH9j_-3b3TB4KB2qmXTq58O47Zo";
+      const GEMINI_API_KEY = "//";
       const apiUrl =
         "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" +
         GEMINI_API_KEY;
@@ -237,3 +237,4 @@
 
   });
 })();
+
