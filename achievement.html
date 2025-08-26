@@ -8,58 +8,104 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
 
-  <!-- Hamburger Icon -->
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div id="mobileNav" class="mobile-nav">
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="achievement.html">Achievements</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="labbuddy.html">Guide Lounge</a></li> <!-- New menu item -->
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+
+      <div class="nav-actions" id="navActions">
+        <a href="profile.html" class="nav-actions-links"><i class="fas fa-user"></i> Profile</a>
+        <a href="login.html" class="nav-actions-links">Login</a>
+        <a href="signup.html" class="signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  
+  <h1 class="page-heading">🏆 Achievements</h1>
+  
+<div class="stat-row">
+  <div class="stat">
+    <div class="k">Daily Streak</div>
+    <div class="v" id="streak">0</div>
   </div>
+  <div class="stat"><div class="k">Labs Completed</div><div class="v" id="labsCompleted">0</div></div>
+  <div class="stat"><div class="k">Badges</div><div class="v"><span id="earned">0</span>/<span id="totalBadges">0</span></div></div>
+  <div class="stat"><div class="k">Time Played</div><div class="v" id="minutes">0</div></div>
+</div>
 
-  <!-- Full Menu: Links + Actions -->
-  <div class="mobile-nav" id="mobileNav">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="labs.html">Labs</a></li>
-      <li><a href="achievement.html">Achievements</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="aboutus.html">About</a></li>
-    </ul>
 
-    <div class="nav-actions" id="navActions">
-      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html" class="signup-btn">Sign Up</a>
+<!-- 👇 NEW STREAK GRID -->
+<div class="streak-section">
+  <h3>🔥 Your Streak Progress</h3>
+  <div id="streakGrid" class="streak-grid"></div>
+  <p id="streakCount">Current Streak: 0 days</p>
+  <button id="markToday">Mark Today ✅</button>
+</div>
+
+
+  <div class="wrap">
+    <div class="grid">
+      <section class="card">
+        <div class="head">
+          <h2>Progress Overview</h2>
+          <small id="profileMini"></small>
+        </div>
+        <div class="progress-hero">
+          <div class="xpbar">
+            <div class="row">
+              <div>
+                <strong>Level <span id="level">1</span></strong><br>
+                <small>XP <span id="xp">0</span>/<span id="xpNext">100</span></small>
+              </div>
+              <div style="text-align:right">
+                <div id="percent">0%</div>
+                <small id="rank">Rookie Explorer</small>
+              </div>
+            </div>
+            <div class="bar"><div class="fill" id="fill"></div></div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat"><div class="k">Daily Streak</div><div class="v" id="streak">0</div></div>
+            <div class="stat"><div class="k">Labs Completed</div><div class="v" id="labsCompleted">0</div></div>
+            <div class="stat"><div class="k">Badges</div><div class="v"><span id="earned">0</span>/<span id="totalBadges">0</span></div></div>
+            <div class="stat"><div class="k">Time Played</div><div class="v" id="minutes">0</div></div>
+          </div>
+        </div>
+
+        <div class="head">
+          <h2>Achievements & Badges</h2>
+          <div class="badge-controls">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="earned">Earned</button>
+            <button class="filter" data-filter="locked">Locked</button>
+          </div>
+        </div>
+        <div class="badges">
+          <div class="badge-grid" id="badgeGrid"></div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="head"><h2>Activity Timeline</h2></div>
+        <div class="tl"><ul class="timeline" id="timeline"></ul></div>
+      </aside>
     </div>
   </div>
-</nav>
-  <main class="container">
-    <h1 class="page-heading">🎖 Your Achievements</h1>
 
-    <!-- Badge Section -->
-    <section class="badges-section">
-      <h2 class="section-heading">🏅 Badges Earned</h2>
-      <div class="badges" id="badgesContainer">
-        <!-- Badges will be inserted here -->
-      </div>
-    </section>
 
-    <!-- Progress Section -->
-    <section class="progress-section">
-      <h2 class="section-heading">📊 Your Progress</h2>
-      <div class="progress-details">
-        <p id="labsCompleted">Labs Completed: Loading...</p>
-        <p id="subjectsCovered">Subjects Covered: Loading...</p>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="timeline-section">
-      <h2 class="section-heading">🕒 Activity Timeline</h2>
-      <ul id="timeline">
-        <!-- Timeline items go here -->
-      </ul>
-    </section>
-  </main>
 
   <script src="achievement.js" type="module"></script>
 </body>

@@ -1,0 +1,677 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #010b1b;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #070b23;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Logo (left) */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ff;
+}
+
+.logo a {
+  color: #0ff;
+  text-decoration: none;
+}
+
+/* Center nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 7px;
+}
+
+.nav-links a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  color: #0ff;
+}
+
+/* Right actions: login, signup, profile */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.signup-btn {
+  background-color: #0ff;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-actions-links {
+  color: whitesmoke;
+  font-size: 17px;
+}
+
+.nav-actions a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-actions a:hover {
+  color: #0ff;
+}
+
+.signup-btn:hover {
+  background-color: #00c9c9;
+}
+
+.hamburger {
+  display: none; /* hide by default */
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav .nav-links,
+  .mobile-nav .nav-actions {
+    display: flex !important; /* force show in mobile dropdown */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  
+  /* Force vertical layout */
+  .nav-links,
+  .nav-actions {
+    position: static;      /* remove absolute from desktop */
+    transform: none;       /* remove translateX from desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+  }
+
+  /* Smaller signup button in mobile */
+  .nav-actions .signup-btn {
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
+/* ---------------- PAGE CONTENT ---------------- */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+  margin-top: 70px;
+  color: #58a6ff;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.buddy-card {
+  background-color: #161b22;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(90, 90, 90, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.buddy-card:hover {
+  transform: scale(1.05);
+}
+
+.buddy-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.buddy-card h2 {
+  color: #f0f6fc;
+}
+
+.buddy-card p {
+  font-size: 14px;
+  color: #c9d1d9;
+}
+
+.buddy-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #238636;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buddy-card button:hover {
+  background-color: #2ea043;
+}
+
+/* ---------------- LAB BUDDY POP-UP ---------------- */
+#labBuddy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Move to right corner */
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  animation: slideUp 0.5s ease-out;
+  z-index: 999;
+}
+
+
+#labBuddy img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#labBuddy .speech {
+  background-color: #238636;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  max-width: 200px;
+  position: relative;
+}
+
+#labBuddy .speech::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #238636 transparent transparent;
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.buddy-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Modal styles (for buddy details) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+}
+.modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #050818;
+  color: #e8e9ec;
+  border-radius: 12px;
+  padding: 20px;
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+.modal-content img {
+  max-width: 150px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Small visual for select button to make it easier to click on mobile */
+.select-btn {
+  pointer-events: auto;
+}
+
+
+/* NEW */
+
+
+/* === Assistant Modal Styling (Updated Fix) === */
+
+.assistant-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Bigger buddy image with transparent background */
+.assistant-header img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  box-shadow: none;
+  padding: 0;
+}
+
+#assistGreeting {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e8e9ec;
+  text-align: center;
+}
+
+/* --- INPUT & BUTTONS --- */
+.assistant-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-top: 10px;
+}
+
+.assistant-inputs input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.assistant-inputs input::placeholder {
+  color: #aaa;
+}
+
+/* Buttons */
+.assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.assist-btn:hover {
+  background: #555;
+}
+
+#assistVoiceBtn {
+  font-size: 18px; /* bigger mic */
+  padding: 10px 12px;
+}
+
+/* Side floating modal */
+.modal-content.assistant {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+}
+
+/* Close button */
+#buddyAssistClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Fully transparent background outside modal */
+#buddyAssistModal {
+  background: transparent !important;
+}
+
+/* --- CHAT AREA --- */
+.assistant-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 10px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Chat bubbles */
+.chat-message {
+  max-width: 85%;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1.35;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* Assistant bubble (left) */
+.chat-message.assistant {
+  align-self: flex-start;
+  background: rgba(23, 31, 196, 0.2);
+  color: #e6edf3;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* User bubble (right) */
+.chat-message.user {
+  align-self: flex-end;
+  background: rgba(44, 97, 103, 0.92);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- MAIN CHATBOX --- */
+#chatBox {
+  background: #0d1b2a;
+  padding: 15px;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Messages */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.4;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+/* User bubble */
+.user {
+  align-self: flex-end;
+  background: #4CAF50;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Assistant bubble */
+.assistant {
+  align-self: flex-start;
+  background: #1e2a38;
+  color: #f1f1f1;
+  border-bottom-left-radius: 4px;
+}
+
+/* Scrollbar */
+#chatBox::-webkit-scrollbar {
+  width: 6px;
+}
+#chatBox::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* --- Responsive tweak --- */
+@media (max-width: 500px) {
+  .modal-content.assistant {
+    width: 95%;
+    right: 2.5%;
+    bottom: 60px;
+  }
+  .assistant-inputs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .assist-btn {
+    width: 100%;
+  }
+}
+
+
+/* ------- */
+
+.assistant-message {
+  background: #f1f1f1;
+  color: #333;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+  line-height: 1.5;
+  max-width: 80%;
+  font-size: 15px;
+}
+
+.read-more {
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-left: 5px;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+
+.caption-line {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 4px;
+  font-style: italic;
+}
+.stop-voice {
+  margin-top: 6px;
+  font-size: 0.75em;
+  padding: 3px 6px;
+  border: none;
+  background: #ff6666;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.stop-voice:hover {
+  background: #e05555;
+}
+
+/* add on's */
+
+/* === Captions + Overlay Controls for Assistant === */
+.assistant-overlay {
+  position: absolute;
+  top: 0px;
+  right: 10px;  /* stay inside instead of -60px */
+  left: 10px;   /* allow it to expand horizontally if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2000;
+}
+
+
+.captions {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 100%;   /* make sure it never forces overflow */
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  word-wrap: break-word;
+  margin-bottom: 40px;
+}
+
+.caption-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.caption-controls .assist-btn {
+  background: rgba(58,58,58,0.9);
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+/* ------------------- */
+/* === Place CC + Stop buttons neatly below the buddy === */
+.caption-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.caption-controls .assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.caption-controls .assist-btn:hover {
+  background: #555;
+}
+
+

@@ -1,9 +1,36 @@
+setTimeout(function() {
+  if (window.innerWidth < 768) { // Mobile screen size
+    alert("💡 This site is best viewed on a desktop for the best experience!");
+  }
+}, 1000);
+
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+});
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
 // Your Firebase config (replace with actual)
 const firebaseConfig = {
-////
+  apiKey: "AIzaSyAI7XhQbo08cEP_YFtmmjr7Z4Bj50bRaMg",
+  authDomain: "starlab-adventure.firebaseapp.com",
+  projectId: "starlab-adventure",
+  storageBucket: "starlab-adventure.firebasestorage.app",
+  messagingSenderId: "550598361567",
+  appId: "1:550598361567:web:2a99e97d63ad3406aec46a",
+  measurementId: "G-5P05SX2MKM"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -61,9 +88,10 @@ document.addEventListener("DOMContentLoaded", loadFacts);
 
 
 // Mobile navbar toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
 
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
+const chatIcon = document.getElementById('chat-icon');
+const chatbotBox = document.getElementById('chatbot-box');
+
+chatIcon.addEventListener('click', () => {
+    chatbotBox.style.display = chatbotBox.style.display === 'none' ? 'flex' : 'none';
 });

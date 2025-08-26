@@ -7,31 +7,30 @@
   <link rel="stylesheet" href="math_2.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
 
-  <!-- Hamburger Icon -->
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- Full Menu: Links + Actions -->
-  <div class="mobile-nav" id="mobileNav">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="labs.html">Labs</a></li>
-      <li><a href="achievement.html">Achievements</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="aboutus.html">About</a></li>
-    </ul>
-
-    <div class="nav-actions" id="navActions">
-      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html" class="signup-btn">Sign Up</a>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
     </div>
-  </div>
-</nav>
+    <div id="mobileNav" class="mobile-nav">
 
+      <ul class="nav-links" id="navLinks">
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="achievement.html">Achievements</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="labbuddy.html">Guide Lounge</a></li> <!-- New menu item -->
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+
+      <div class="nav-actions" id="navActions">
+        <a href="profile.html" class="nav-actions-links"><i class="fas fa-user"></i> Profile</a>
+        <a href="login.html" class="nav-actions-links">Login</a>
+        <a href="signup.html" class="signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <h2>Coordinate Geometry Lab</h2>
@@ -43,6 +42,51 @@
     <button onclick="resetGraph()">Reset</button>
   </main>
 
+  
+<!-- ------------ -->
+ 
+<!-- Floating Lab Buddy after selection -->
+<!-- <div id="labBuddy" style="display: none;">
+  <img id="labBuddyImg" src="" alt="Lab Buddy" />
+  <div class="speech" id="labBuddyMsg">Hi, I'm your Lab Buddy!</div>
+</div> -->
+
+<!-- Buddy Detail Modal (add this near the end of body) -->
+<!-- Assistant modal (opens when the bottom-right buddy is clicked) -->
+<!-- <div id="buddyAssistModal" class="modal" aria-hidden="true">
+  <div class="modal-content assistant">
+    <span id="buddyAssistClose" class="close-btn" aria-label="Close">&times;</span>
+
+    <div class="assistant-header">
+      <img id="assistBuddyImg" src="" alt="Lab Buddy">
+
+      <!-- Caption & stop controls directly below the buddy -->
+      <!-- <div class="caption-controls">
+        <button id="captionToggle" class="assist-btn" aria-pressed="false" title="Toggle captions">CC</button>
+        <button id="assistStopFloating" class="assist-btn" title="Stop Speaking">⏹️</button>
+      </div> --> -->
+
+      <!-- Captions (floating overlay if enabled) -->
+      <!-- <div id="assistantOverlay" class="assistant-overlay" aria-live="polite" aria-atomic="true">
+        <div id="captionOverlay" class="captions" hidden></div>
+      </div>
+
+      <h2 id="assistGreeting">Hey! How can I help you today?</h2>
+    </div>
+
+    <div class="assistant-inputs">
+      <input id="assistText" type="text" placeholder="Type your question…" />
+      <button id="assistSendBtn" class="assist-btn">Send</button>
+      <button id="assistVoiceBtn" class="assist-btn" title="Speak">🎤</button>
+    </div>
+
+  </div> -->
+<!-- </div> -->
+
+
+<script src="labbuddy.js"></script>
+<script src="labbuddyvoice.js"></script>
   <script src="math_2.js"></script>
+
 </body>
 </html>

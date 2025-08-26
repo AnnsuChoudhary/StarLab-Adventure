@@ -1,3 +1,22 @@
+setTimeout(function() {
+  if (window.innerWidth < 768) { // Mobile screen size
+    alert("💡 This site is best viewed on a desktop for the best experience!");
+  }
+}, 1000);
+
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+});
 // reflection.js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -152,10 +171,5 @@ medium2.addEventListener("change", drawSimulation);
 // Initial draw
 drawSimulation();
 
-// Mobile navbar toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
 
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-});
+// -----------------------

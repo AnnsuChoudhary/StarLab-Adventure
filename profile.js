@@ -1,3 +1,25 @@
+setTimeout(function() {
+  if (window.innerWidth < 768) { // Mobile screen size
+    alert("💡 This site is best viewed on a desktop for the best experience!");
+  }
+}, 1000);
+
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+});
+
+
+
 import { setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import {
@@ -14,7 +36,13 @@ import {
 
 // Firebase config
 const firebaseConfig = {
-  // 
+  apiKey: "AIzaSyAI7XhQbo08cEP_YFtmmjr7Z4Bj50bRaMg",
+  authDomain: "starlab-adventure.firebaseapp.com",
+  projectId: "starlab-adventure",
+  storageBucket: "starlab-adventure.firebasestorage.app",
+  messagingSenderId: "550598361567",
+  appId: "1:550598361567:web:2a99e97d63ad3406aec46a",
+  measurementId: "G-5P05SX2MKM"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -47,7 +75,19 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     currentUser = user;
     const userRef = doc(db, "users", user.uid);
-    const docSnap = await getDoc(userRef);
+    let docSnap = await getDoc(userRef);
+
+    // 🔽 If user document doesn't exist, create it
+    if (!docSnap.exists()) {
+      await setDoc(userRef, {
+        name: "New User",
+        email: user.email,
+        "School/College": "",
+        about: ""
+      });
+      // Re-fetch the updated document
+      docSnap = await getDoc(userRef);
+    }
 
     if (docSnap.exists()) {
       const data = docSnap.data();
@@ -64,6 +104,7 @@ onAuthStateChanged(auth, async (user) => {
     loginPrompt.style.display = "block";
   }
 });
+
 
 // Edit logic
 editBtn.addEventListener("click", () => {
@@ -84,27 +125,23 @@ saveBtn.addEventListener("click", async () => {
   if (!currentUser) return;
 
   const userRef = doc(db, "users", currentUser.uid);
-//   await updateDoc(userRef, {
-//     name: editName.value,
-//     "School/College": editCollege.value,
-//     about: editAbout.value
-//   });
-  
 
   await setDoc(userRef, {
-  name: editName.value,
-  "School/College": editCollege.value,
-  about: editAbout.value
+    name: editName.value,
+    "School/College": editCollege.value,
+    about: editAbout.value,
+    email: currentUser.email  // ✅ Add this line
   }, { merge: true });
-
 
   userName.textContent = editName.value;
   userCollege.textContent = editCollege.value;
   userAbout.textContent = editAbout.value;
+  userEmail.textContent = currentUser.email; // ✅ Also reflect in UI
 
   editForm.classList.add("hidden");
   profileCard.classList.remove("hidden");
 });
+
 
 // Logout
 logoutBtn.addEventListener("click", () => {
@@ -113,12 +150,4 @@ logoutBtn.addEventListener("click", () => {
   });
 });
 
-
-// Mobile navbar toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-});
 

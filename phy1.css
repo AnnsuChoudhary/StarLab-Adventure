@@ -6,80 +6,172 @@ body {
   color: white;
 }
 
-
+/* Navbar */
 .navbar {
-  position: fixed;        /* Fixes it to the screen */
-  top: 0;                 /* No gap from top */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;            /* Full width */
+  width: 100%;
   height: 60px;
-  background-color: #070b23; /* Solid background */
+  background-color: #070b23;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;          /* Make sure it stays above everything */
-  padding: 0 20px;        /* Optional horizontal spacing */
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-
+/* Logo (left) */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #0ff;
 }
 
-.nav-links,
-.nav-actions  {
+.logo a {
+  color: #0ff;
+  text-decoration: none;
+}
+
+/* Center nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 7px;
+}
+
+.nav-links a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  color: #0ff;
+}
+
+/* Right actions: login, signup, profile */
+.nav-actions {
   display: flex;
   align-items: center;
-  color: rgb(232, 232, 232);
-  text-decoration: none;
-  gap: 20px;
-  padding-right: 40px;
-}
-.logo a{
-    color: #0ff;
-}
-a{
-  color: whitesmoke;
-  text-decoration: none;
-}
-.nav-links a,
-.nav-links {
-  list-style: none; /* 💥 Removes bullets */
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  color: whitesmoke;
-  text-decoration: none;
-  
-}
-
-
-.nav-links a:hover,
-.nav-links a:hover {
-  color: #0ff; /* or any other highlight color */
-  text-decoration: none; /* keep underline removed on hover */
-}
-.nav-actions a:hover {
-  color: #0ff; /* or any other highlight color */
-  text-decoration: none; /* keep underline removed on hover */
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .signup-btn {
   background-color: #0ff;
   color: #000;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 5px;
   font-weight: bold;
   transition: 0.3s;
+}
+
+.nav-actions-links {
+  color: whitesmoke;
+  font-size: 17px;
+}
+
+.nav-actions a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-actions a:hover {
+  color: #0ff;
 }
 
 .signup-btn:hover {
   background-color: #00c9c9;
 }
 
+.hamburger {
+  display: none; /* hide by default */
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav .nav-links,
+  .mobile-nav .nav-actions {
+    display: flex !important; /* force show in mobile dropdown */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  
+  /* Force vertical layout */
+  .nav-links,
+  .nav-actions {
+    position: static;      /* remove absolute from desktop */
+    transform: none;       /* remove translateX from desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+  }
+
+  /* Smaller signup button in mobile */
+  .nav-actions .signup-btn {
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
 
 main {
   padding: 20px;
@@ -146,127 +238,208 @@ h1{
   padding-top: 20px;
 }
 
+/* ------------------------- */
 
-/* ---------------- MOBILE NAVBAR ---------------- */
-/* MOBILE NAV ONLY */
-@media (max-width: 800px) {
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-    color: #0ff;
-    z-index: 1001;
-  }
-
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background-color: #070b23;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 10px 20px;
-  }
-
-  .mobile-nav.active {
-    display: flex;
-  }
-
-  .nav-links,
-  .nav-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a,
-  .nav-actions a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    color: white;
-  }
-
-  .main-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  nav.navbar{
-  width: 90%;
-
-}
+/* Floating Lab Buddy */
+#labBuddy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  animation: slideUp 0.5s ease-out;
+  z-index: 999;
 }
 
-
-/* Navbar spacing for desktop
-.navbar {
-  justify-content: space-between;
-  padding: 0 20px;
-} */
-
-/* DESKTOP LAYOUT RESTORE (after mobile styles) */
-@media (min-width: 769px) {
-  .mobile-nav {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    position: static;
-    background: none;
-    padding: 0;
-  }
-
-  @media (min-width: 769px) {
-  .nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
+#labBuddy img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
-
-
-  .nav-actions {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .nav-links li,
-  .nav-links a,
-  .nav-actions a {
-    padding: 0;
-    width: auto;
-  }
-
-  .hamburger {
-    display: none;
-  }
-  .signup-btn {
-  background-color: #0ff;
-  color: #000;
-  padding: 6px 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-  height: 30px;
-  width: 88.44px;
-  padding-left: 10%;
-  padding-right: 10%;
+#labBuddy .speech {
+  background-color: #238636;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  max-width: 200px;
+  position: relative;
 }
 
-
-.signup-btn:hover {
-  background-color: #00c9c9;
+#labBuddy .speech::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #238636 transparent transparent;
 }
 
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0px); opacity: 1; }
+}
 
+/* Buddy Modal */
+#buddyAssistModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent !important; /* keep outside transparent */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content.assistant {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+  text-align: center;
+}
+
+.assistant-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.assistant-header img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  box-shadow: none;
+  padding: 0;
+}
+
+#assistGreeting {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e8e9ec;
+  text-align: center;
+}
+
+/* Assistant input & buttons */
+.assistant-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-top: 10px;
+}
+
+.assistant-inputs input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.assistant-inputs input::placeholder {
+  color: #aaa;
+}
+
+.assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.assist-btn:hover { background: #555; }
+
+#assistVoiceBtn { font-size: 18px; padding: 10px 12px; }
+
+/* Caption controls */
+.caption-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.caption-controls .assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.caption-controls .assist-btn:hover { background: #555; }
+
+/* Overlay captions */
+.assistant-overlay {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2000;
+}
+
+.captions {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  word-wrap: break-word;
+  margin-bottom: 40px;
+}
+
+/* Close button */
+#buddyAssistClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
 }

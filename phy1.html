@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reflection & Refraction Simulator</title>
   <link rel="stylesheet" href="phy1.css">
+  <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">🔭 StarLab Adventure</a></div>
 
-  <!-- Hamburger Icon -->
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- Full Menu: Links + Actions -->
-  <div class="mobile-nav" id="mobileNav">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="labs.html">Labs</a></li>
-      <li><a href="achievement.html">Achievements</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="aboutus.html">About</a></li>
-    </ul>
-
-    <div class="nav-actions" id="navActions">
-      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html" class="signup-btn">Sign Up</a>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
     </div>
-  </div>
-</nav>
+    <div id="mobileNav" class="mobile-nav">
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="achievement.html">Achievements</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="labbuddy.html">Guide Lounge</a></li> <!-- New menu item -->
+        <li><a href="aboutus.html">About</a></li>
+      </ul>
+
+      <div class="nav-actions" id="navActions">
+        <a href="profile.html" class="nav-actions-links"><i class="fas fa-user"></i> Profile</a>
+        <a href="login.html" class="nav-actions-links">Login</a>
+        <a href="signup.html" class="signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
   <main>
     <h1>Reflection & Refraction Simulator</h1>
 
@@ -80,6 +83,65 @@
     </div>
   </main>
 
-  <script src="phy1.js"></script>
+  <!-- Floating Lab Buddy after selection -->
+
+<!-- <div id="labBuddy">
+  <img id="labBuddyImg" src="" alt="Lab Buddy">
+  <div id="labBuddyMsg" class="speech"></div>
+</div> -->
+
+<div id="labBuddy" >
+  <img id="labBuddyImg" src="" alt="Lab Buddy" />
+  <div class="speech" id="labBuddyMsg">Hi, I'm your Lab Buddy!</div>
+</div>
+
+<!-- Buddy Detail Modal (Assistant modal) -->
+<div id="buddyAssistModal" class="modal" aria-hidden="true">
+  <div class="modal-content assistant">
+    <span id="buddyAssistClose" class="close-btn" aria-label="Close">&times;</span>
+
+    <div class="assistant-header">
+      <img id="assistBuddyImg" src="" alt="Lab Buddy">
+
+      <!-- Caption & stop controls directly below the buddy -->
+      <div class="caption-controls">
+        <button id="captionToggle" class="assist-btn" aria-pressed="false" title="Toggle captions">CC</button>
+        <button id="assistStopFloating" class="assist-btn" title="Stop Speaking">⏹️</button>
+      </div>
+
+      <!-- Captions (floating overlay if enabled) -->
+      <div id="assistantOverlay" class="assistant-overlay" aria-live="polite" aria-atomic="true">
+        <div id="captionOverlay" class="captions" hidden></div>
+      </div>
+
+      <h2 id="assistGreeting">Hey! How can I help you today?</h2>
+    </div>
+
+    <div class="assistant-inputs">
+      <input id="assistText" type="text" placeholder="Type your question…" />
+      <button id="assistSendBtn" class="assist-btn">Send</button>
+      <button id="assistVoiceBtn" class="assist-btn" title="Speak">🎤</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Firebase Initialization -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAI7XhQbo08cEP_YFtmmjr7Z4Bj50bRaMg",
+  authDomain: "starlab-adventure.firebaseapp.com",
+  projectId: "starlab-adventure",
+  storageBucket: "starlab-adventure.firebasestorage.app",
+  messagingSenderId: "550598361567",
+  appId: "1:550598361567:web:2a99e97d63ad3406aec46a",
+  measurementId: "G-5P05SX2MKM"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+<script src="labbuddy.js"></script>  
+<script src="phy1.js"></script>
+  <script src="labbuddyvoice.js"></script>
 </body>
 </html>

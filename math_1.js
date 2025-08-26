@@ -1,3 +1,23 @@
+setTimeout(function() {
+  if (window.innerWidth < 768) { // Mobile screen size
+    alert("💡 This site is best viewed on a desktop for the best experience!");
+  }
+}, 1000);
+
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+});
+
 function calculate() {
   const a = parseFloat(document.getElementById("sideA").value);
   const b = parseFloat(document.getElementById("sideB").value);
@@ -98,10 +118,3 @@ function drawGrid(ctx, canvas) {
 calculate();
 
 
-// Mobile navbar toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-});

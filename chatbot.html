@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarLab AI Lab Assistant</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <!-- For Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        
+        <!-- Header -->
+        <header class="chat-header">
+            🧪 StarLab AI Lab Assistant
+        </header>
+
+        <!-- Messages area -->
+        <main class="chat-box" id="chat-box" aria-live="polite"></main>
+
+        <!-- Input area -->
+        <footer class="chat-input">
+            <input 
+                type="text" 
+                id="user-input" 
+                placeholder="Ask me anything about science..." 
+                autocomplete="off" 
+                aria-label="Type your question here"
+            />
+            <button id="send-btn" aria-label="Send message">Send</button>
+        </footer>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

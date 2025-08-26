@@ -5,80 +5,172 @@ body {
   color: white;
 }
 
-
+/* Navbar */
 .navbar {
-  position: fixed;        /* Fixes it to the screen */
-  top: 0;                 /* No gap from top */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;            /* Full width */
+  width: 100%;
   height: 60px;
-  background-color: #070b23; /* Solid background */
+  background-color: #070b23;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;          /* Make sure it stays above everything */
-  padding: 0 20px;        /* Optional horizontal spacing */
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-
+/* Logo (left) */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #0ff;
 }
 
-.nav-links,
-.nav-actions  {
+.logo a {
+  color: #0ff;
+  text-decoration: none;
+}
+
+/* Center nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 7px;
+}
+
+.nav-links a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  color: #0ff;
+}
+
+/* Right actions: login, signup, profile */
+.nav-actions {
   display: flex;
   align-items: center;
-  color: rgb(232, 232, 232);
-  text-decoration: none;
-  gap: 20px;
-  padding-right: 40px;
-}
-.logo a{
-    color: #0ff;
-}
-a{
-  color: whitesmoke;
-  text-decoration: none;
-}
-.nav-links a,
-.nav-links {
-  list-style: none; /* 💥 Removes bullets */
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  color: whitesmoke;
-  text-decoration: none;
-  
-}
-
-
-.nav-links a:hover,
-.nav-links a:hover {
-  color: #0ff; /* or any other highlight color */
-  text-decoration: none; /* keep underline removed on hover */
-}
-.nav-actions a:hover {
-  color: #0ff; /* or any other highlight color */
-  text-decoration: none; /* keep underline removed on hover */
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .signup-btn {
   background-color: #0ff;
   color: #000;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 5px;
   font-weight: bold;
   transition: 0.3s;
+}
+
+.nav-actions-links {
+  color: whitesmoke;
+  font-size: 17px;
+}
+
+.nav-actions a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-actions a:hover {
+  color: #0ff;
 }
 
 .signup-btn:hover {
   background-color: #00c9c9;
 }
 
+.hamburger {
+  display: none; /* hide by default */
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ff;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070b23;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav .nav-links,
+  .mobile-nav .nav-actions {
+    display: flex !important; /* force show in mobile dropdown */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  
+  /* Force vertical layout */
+  .nav-links,
+  .nav-actions {
+    position: static;      /* remove absolute from desktop */
+    transform: none;       /* remove translateX from desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+  }
+
+  /* Smaller signup button in mobile */
+  .nav-actions .signup-btn {
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
 
 main {
   text-align: center;
@@ -136,126 +228,410 @@ button:hover {
 }
 
 
-/* ---------------- MOBILE NAVBAR ---------------- */
-/* MOBILE NAV ONLY */
-@media (max-width: 800px) {
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-    color: #0ff;
-    z-index: 1001;
-  }
+/* ------------------------- */
 
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background-color: #070b23;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 10px 20px;
-  }
 
-  .mobile-nav.active {
-    display: flex;
-  }
+/* === Assistant Modal Styling (Updated Fix) === */
 
-  .nav-links,
-  .nav-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a,
-  .nav-actions a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    color: white;
-  }
-
-  .main-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  nav.navbar{
-  width: 100%;
-
-}
+.assistant-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
+/* Bigger buddy image with transparent background */
+.assistant-header img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  box-shadow: none;
+  padding: 0;
+}
 
-/* Navbar spacing for desktop
-.navbar {
-  justify-content: space-between;
-  padding: 0 20px;
+#assistGreeting {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e8e9ec;
+  text-align: center;
+}
+
+/* --- INPUT & BUTTONS --- */
+.assistant-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-top: 10px;
+}
+
+.assistant-inputs input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.assistant-inputs input::placeholder {
+  color: #aaa;
+}
+
+/* Buttons */
+.assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.assist-btn:hover {
+  background: #555;
+}
+
+#assistVoiceBtn {
+  font-size: 18px; /* bigger mic */
+  padding: 10px 12px;
+}
+
+/* Side floating modal */
+.modal-content.assistant {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+}
+
+/* Close button */
+#buddyAssistClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Fully transparent background outside modal */
+#buddyAssistModal {
+  background: transparent !important;
+}
+
+/* --- CHAT AREA --- */
+.assistant-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 10px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Chat bubbles */
+.chat-message {
+  max-width: 85%;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1.35;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* Assistant bubble (left) */
+.chat-message.assistant {
+  align-self: flex-start;
+  background: rgba(23, 31, 196, 0.2);
+  color: #e6edf3;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* User bubble (right) */
+.chat-message.user {
+  align-self: flex-end;
+  background: rgba(44, 97, 103, 0.92);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- MAIN CHATBOX --- */
+#chatBox {
+  background: #0d1b2a;
+  padding: 15px;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Messages */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.4;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+/* User bubble */
+.user {
+  align-self: flex-end;
+  background: #4CAF50;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Assistant bubble */
+.assistant {
+  align-self: flex-start;
+  background: #1e2a38;
+  color: #f1f1f1;
+  border-bottom-left-radius: 4px;
+}
+
+/* Scrollbar */
+#chatBox::-webkit-scrollbar {
+  width: 6px;
+}
+#chatBox::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* --- Responsive tweak --- */
+@media (max-width: 500px) {
+  .modal-content.assistant {
+    width: 95%;
+    right: 2.5%;
+    bottom: 60px;
+  }
+  .assistant-inputs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .assist-btn {
+    width: 100%;
+  }
+}
+
+
+/* ------- */
+
+.assistant-message {
+  background: #f1f1f1;
+  color: #333;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+  line-height: 1.5;
+  max-width: 80%;
+  font-size: 15px;
+}
+
+.read-more {
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-left: 5px;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+
+.caption-line {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 4px;
+  font-style: italic;
+}
+.stop-voice {
+  margin-top: 6px;
+  font-size: 0.75em;
+  padding: 3px 6px;
+  border: none;
+  background: #ff6666;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.stop-voice:hover {
+  background: #e05555;
+}
+
+/* add on's */
+
+/* === Captions + Overlay Controls for Assistant === */
+.assistant-overlay {
+  position: absolute;
+  top: 0px;
+  right: 10px;  /* stay inside instead of -60px */
+  left: 10px;   /* allow it to expand horizontally if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2000;
+}
+
+
+.captions {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 100%;   /* make sure it never forces overflow */
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  word-wrap: break-word;
+  margin-bottom: 40px;
+}
+
+.caption-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.caption-controls .assist-btn {
+  background: rgba(58,58,58,0.9);
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+/* ------------------- */
+/* === Place CC + Stop buttons neatly below the buddy === */
+.caption-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.caption-controls .assist-btn {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.caption-controls .assist-btn:hover {
+  background: #555;
+}
+
+
+/* *************** */
+
+/* === Floating Lab Buddy (first small box) === */
+/* #labBuddy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: rgba(20, 20, 40, 0.9);
+  padding: 10px 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 1500; 
 } */
 
-/* DESKTOP LAYOUT RESTORE (after mobile styles) */
-@media (min-width: 769px) {
-  .mobile-nav {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    position: static;
-    background: none;
-    padding: 0;
-  }
-
-  @media (min-width: 769px) {
-  .nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
+/* #labBuddy img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: transparent;
 }
 
+#labBuddy .speech {
+  background: #4CAF50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 180px;
+  text-align: left;
+} */
 
-
-  .nav-actions {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .nav-links li,
-  .nav-links a,
-  .nav-actions a {
-    padding: 0;
-    width: auto;
-  }
-
-  .hamburger {
-    display: none;
-  }
-  .signup-btn {
-  background-color: #0ff;
-  color: #000;
-  padding: 6px 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-  height: 30px;
-  width: 88.44px;
-  padding-left: 10%;
-  padding-right: 10%;
+/* //////////// */
+/* === Floating Lab Buddy Styling === */
+#labBuddy {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none; /* will be turned on by JS */
+  align-items: center;
+  gap: 10px;
+  z-index: 1100;
+  cursor: pointer;
 }
 
-
-.signup-btn:hover {
-  background-color: #00c9c9;
+#labBuddy img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
+#labBuddy .speech {
+  background-color: #238636;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  max-width: 220px;
+  line-height: 1.4;
+  position: relative;
+}
 
+#labBuddy .speech::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #238636 transparent transparent;
 }

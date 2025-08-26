@@ -1,3 +1,22 @@
+setTimeout(function() {
+  if (window.innerWidth < 768) { // Mobile screen size
+    alert("💡 This site is best viewed on a desktop for the best experience!");
+  }
+}, 1000);
+
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+});
 const canvas = document.getElementById("graphCanvas");
 const ctx = canvas.getContext("2d");
 const outputBox = document.getElementById("outputBox");
@@ -146,10 +165,57 @@ function resetGraph() {
 drawGrid();
 
 
-// Mobile navbar toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
+// ---------
+// Show chosen buddy in floating box
+function showLabBuddy(buddy) {
+  const buddyDiv = document.getElementById("labBuddy");
+  const buddyImg = document.getElementById("labBuddyImg");
+  const buddyMsg = document.getElementById("labBuddyMsg");
 
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
+  // Example buddy config (you can expand this)
+  const buddies = {
+    vivi: { img: "vivi.png", msg: "Hi, I’m Vivi, ready to help!" },
+    drnova: { img: "drnova.png", msg: "Hello, I’m Dr. Nova, let’s explore!" }
+  };
+
+  if (buddies[buddy]) {
+    buddyImg.src = buddies[buddy].img;
+    buddyMsg.textContent = buddies[buddy].msg;
+    buddyDiv.style.display = "flex"; // show floating buddy
+  }
+}
+
+// Example: load from localStorage (after selection page)
+document.addEventListener("DOMContentLoaded", () => {
+  const chosenBuddy = localStorage.getItem("chosenBuddy"); // e.g., "vivi"
+  if (chosenBuddy) {
+    showLabBuddy(chosenBuddy);
+  }
+});
+
+// Toggle speech bubble on click
+document.getElementById("labBuddy").addEventListener("click", () => {
+  const msg = document.getElementById("labBuddyMsg");
+  msg.style.display = msg.style.display === "none" ? "block" : "none";
+});
+
+
+// ***
+
+// math2.js (at the very end)
+document.addEventListener("DOMContentLoaded", () => {
+  const labBuddyDiv = document.getElementById("labBuddy");
+  const labBuddyImg = document.getElementById("labBuddyImg");
+
+  // Try to read from localStorage (set in labbuddy.html after selection)
+  const buddySrc = localStorage.getItem("selectedBuddyImg");
+
+  if (buddySrc) {
+    labBuddyImg.src = buddySrc;
+    labBuddyDiv.style.display = "block";
+  } else {
+    // fallback (optional)
+    labBuddyImg.src = "assets/buddies/default.png";
+    labBuddyDiv.style.display = "block";
+  }
 });
