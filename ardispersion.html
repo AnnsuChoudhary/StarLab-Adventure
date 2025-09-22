@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispersion of Light through a Prism</title>
+  <link rel="stylesheet" href="ardispersion.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.0.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <h1>Dispersion of Light through a Prism</h1>
+
+  <!-- Prism -->
+  <div class="viewer-container">
+    <model-viewer id="prismViewer"
+      src="triangular_prism.glb"
+      alt="3D Prism"
+      auto-rotate
+      camera-controls
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="fixed"
+      style="width:100%; height:500px; background-color: black;">
+    </model-viewer>
+
+    <!-- Overlay for rays -->
+    <canvas id="rayCanvas"></canvas>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="toggleDispersion">Toggle Dispersion</button>
+    <button id="toggleRays">Toggle Rays</button>
+    <button id="startAR">Camera On (Start AR)</button>
+    <button id="stopAR">Camera Off (Stop AR)</button>
+  </div>
+
+  <div id="angleInfo" class="info-panel"></div>
+
+  <script src="ardispersion.js"></script>
+  <script>
+    const viewer = document.getElementById('prismViewer');
+    const startBtn = document.getElementById('startAR');
+    const stopBtn = document.getElementById('stopAR');
+
+    // Start AR (camera on)
+    startBtn.addEventListener('click', () => {
+      viewer.activateAR();
+    });
+
+    // Stop AR (camera off)
+    stopBtn.addEventListener('click', () => {
+      if (viewer.exitAR) {
+        viewer.exitAR(); // supported on some browsers
+      } else {
+        // fallback: just hide AR mode and reset
+        alert("Stopping AR is not fully supported in all browsers. Close AR manually if needed.");
+        viewer.removeAttribute("ar"); 
+        setTimeout(() => viewer.setAttribute("ar",""), 100); // re-enable later
+      }
+    });
+  </script>
+</body>
+</html>

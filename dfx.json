@@ -1,0 +1,16 @@
+{
+  "canisters": {
+    "starlab_assets": {
+      "type": "assets",
+      "source": ["StarLabAdventure"]
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    },
+    "ic": {}
+  },
+  "version": 1
+}

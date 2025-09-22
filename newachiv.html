@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Streak - StarLab Adventure</title>
+  <link rel="stylesheet" href="newachiv.css" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 StarLab Daily Progress</h1>
+
+    <!-- Streak card -->
+    <div class="card streak-card fade-in">
+      <h2 id="streakDisplay">🔥 Daily Streak: 0 days</h2>
+      <p>Stay consistent and unlock badges!</p>
+    </div>
+
+    <!-- Calendar card -->
+    <div class="card fade-in">
+      <h2 id="monthYear"></h2>
+      <div class="calendar-wrapper">
+        <div id="weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div>
+          <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+    <!-- Leaderboard card -->
+    <div class="card leaderboard-card fade-in">
+      <h2>🏆 Leaderboard</h2>
+      <ul id="leaderboard"></ul>
+    </div>
+  </div>
+   
+  <div class="card badges-card fade-in">
+      <h2>🎖️ Badges</h2>
+      <div id="badges" class="badges-grid">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+  
+  <script src="newachiv.js"></script>
+</body>
+</html>

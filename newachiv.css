@@ -1,0 +1,227 @@
+/* Background & base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1a2a6c, #16222a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 15px rgba(255, 204, 0, 0.9); }
+  50% { text-shadow: 0 0 30px rgba(255, 204, 0, 1); }
+}
+
+/* Headings */
+h1 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #fff;
+}
+
+/* Card style */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* Streak card highlight */
+.streak-card {
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+}
+#streakDisplay {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: pulse 2s infinite;
+}
+
+/* Calendar */
+#monthYear {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+#weekdays, #calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-gap: 8px;
+  justify-content: center;
+}
+
+#weekdays div {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.day {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.day.today {
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+.day:hover {
+  transform: scale(1.2) rotate(2deg);
+  z-index: 10;
+  background: linear-gradient(135deg, #ffcc00, #ff6f00);
+  color: #000;
+  font-weight: bold;
+}
+.day[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Leaderboard */
+#leaderboard {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  text-align: left;
+}
+#leaderboard li {
+  background: rgba(44, 44, 44, 0.9);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  transition: transform 0.3s, background 0.3s;
+}
+#leaderboard li:hover {
+  background: rgba(255, 204, 0, 0.1);
+  transform: translateX(6px);
+}
+
+/* Leaderboard ranks */
+#leaderboard li:nth-child(1) {
+  border-left: 6px solid gold;
+  font-weight: bold;
+  background: linear-gradient(90deg, rgba(255,215,0,0.2), rgba(44,44,44,0.9));
+}
+#leaderboard li:nth-child(2) {
+  border-left: 6px solid silver;
+  background: linear-gradient(90deg, rgba(192,192,192,0.2), rgba(44,44,44,0.9));
+}
+#leaderboard li:nth-child(3) {
+  border-left: 6px solid #cd7f32;
+  background: linear-gradient(90deg, rgba(205,127,50,0.2), rgba(44,44,44,0.9));
+}
+
+/* Badges */
+.badges-card {
+  border: 2px solid #00c9ff;
+  box-shadow:  20px rgba(0, 201, 255, 0.6);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  position: relative;
+}
+
+.badge img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  transition: filter 0.3s;
+}
+
+.badge.locked img {
+  filter: grayscale(100%) brightness(0.5);
+}
+
+.badge span {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+  background: rgba(0, 201, 255, 0.15);
+}
+
+/* Tooltip */
+.badge[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+}
